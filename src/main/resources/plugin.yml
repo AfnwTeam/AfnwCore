@@ -1,0 +1,24 @@
+name: afnwcore
+version: '${project.version}'
+main: com.github.merunno.afnwcore
+api-version: 1.17
+prefix: AfnwCore
+load: STARTUP
+authors: [ merunno ]
+description: A world with only one bedrock.
+website: https://github.com/merunno/AfnwCore
+
+permissions:
+  afnw.commands:
+    default: not op
+  afnw.op.commands:
+    default: op
+
+commands:
+  randomitem:
+    description: アイテムを指定したユーザーに配布します。(コンソールでのみ実行できます。また、プラグイン実行用です。)
+    permission: afnw.op.commands
+  vote-link:
+    description: 投票リンクを表示します。
+    aliases:
+      - vi
