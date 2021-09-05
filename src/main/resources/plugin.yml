@@ -3,7 +3,7 @@ version: '${project.version}'
 main: com.github.merunno.afnwcore
 api-version: 1.17
 prefix: AfnwCore
-load: STARTUP
+load: POSTWORLD
 authors: [ merunno ]
 description: A world with only one bedrock.
 website: https://github.com/merunno/AfnwCore

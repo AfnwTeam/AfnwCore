@@ -7,9 +7,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
-import org.bukkit.plugin.java.JavaPlugin;
 
-public class EventManager extends JavaPlugin implements Listener {
+public class EventManager implements Listener {
 
     String pluginAfnw = "[AfnwCore] ";
 
