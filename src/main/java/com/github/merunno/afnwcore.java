@@ -30,7 +30,11 @@ public final class afnwcore extends JavaPlugin {
             List<Material> materials = Arrays.asList(Material.values());
             Collections.shuffle(materials);
             ItemStack itemStack = new ItemStack(materials.get(0), 8);
-            player.getInventory().addItem(itemStack);
+            if(Bukkit.getPlayer(id) != null) {
+                getLogger().info("オフラインだったためアイテムの付与をキャンセルしました。");
+            } else {
+                player.getInventory().addItem(itemStack);
+            }
         } else if (command.getName().equalsIgnoreCase("vote-link")) {
             sender.sendMessage(ChatColor.GREEN + "=== Vote Site ===");
             sender.sendMessage(Vote + "Japan Minecraft Servers");
