@@ -11,5 +11,6 @@ public final class afnwcore extends JavaPlugin {
         getLogger().info("Afnwを読み込みました。このプラグインはコンソールでのみ実行が可能です。");
         getServer().getPluginManager().registerEvents(new EventManager(), this);
         Objects.requireNonNull(getCommand("randomitem")).setExecutor(new CommandClass());
+        Objects.requireNonNull(getCommand("vote-link")).setExecutor(new CommandClass());
     }
 }

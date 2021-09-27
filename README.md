@@ -2,6 +2,14 @@
 
 岩盤一つしかない世界で、生きる。
 
+## パッチノート
+
+[GitHub](https://github.com/merunno/AfnwCore/tree/master/docs)
+
+or
+
+[GitHub Pages](https://merunno.github.io/AfnwCore/)
+
 ## 対応バージョン
 
 Spigot v1.17  
