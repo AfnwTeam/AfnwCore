@@ -16,8 +16,8 @@ public class EventManager implements Listener {
     public void onjoin(PlayerJoinEvent joinEvent) {
         Player player = joinEvent.getPlayer();
         joinEvent.setJoinMessage(ChatColor.GRAY + pluginAfnw + player.getName() + "がAfnwにログインしました。");
-        player.sendMessage("Afnwにようこそ！\nアイテムを入手するには投票を行ってください。：" + ChatColor.YELLOW + "/vote-link");
-        player.sendTitle(ChatColor.AQUA + "Afnw", ChatColor.WHITE + "v2.2.0", 3, 60, 1);
+        player.sendMessage(ChatColor.YELLOW + "Afnwにようこそ！\nアイテムを入手するには投票を行ってください。：" + ChatColor.YELLOW + "/vote-link");
+        player.sendTitle(ChatColor.AQUA + "Afnw", ChatColor.WHITE + "v2.2.5", 3, 60, 1);
     }
 
     @EventHandler
