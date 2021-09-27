@@ -29,6 +29,8 @@ public class CommandClass implements CommandExecutor {
             Objects.requireNonNull(player).getInventory().addItem(itemStack);
             player.sendMessage(ChatColor.YELLOW + pluginAfnw + "アイテムの配布に成功しました。");
             sound(loc);
+            particle(loc);
+            sender.sendMessage("配布に成功");
         } else if (command.getName().equalsIgnoreCase("vote-link")) {
             sender.sendMessage(ChatColor.GREEN + "=== Vote Site ===");
             sender.sendMessage(Vote + "Japan Minecraft Servers");
@@ -46,5 +48,9 @@ public class CommandClass implements CommandExecutor {
 
     private void sound(Location loc) {
         Objects.requireNonNull(loc.getWorld()).playSound(loc, Sound.BLOCK_AMETHYST_CLUSTER_BREAK, 1, 1);
+    }
+
+    private void particle(Location loc) {
+        Objects.requireNonNull(loc.getWorld()).playEffect(loc, Effect.DRAGON_BREATH, 0, 14);
     }
 }
