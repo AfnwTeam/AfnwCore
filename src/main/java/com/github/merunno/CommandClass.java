@@ -1,8 +1,6 @@
 package com.github.merunno;
 
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.Material;
+import org.bukkit.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -16,6 +14,7 @@ import java.util.Objects;
 public class CommandClass implements CommandExecutor {
 
     String Vote = ChatColor.YELLOW + "★ " + ChatColor.WHITE;
+    String pluginAfnw = "[AfnwCore] ";
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
@@ -26,6 +25,7 @@ public class CommandClass implements CommandExecutor {
             Collections.shuffle(materials);
             ItemStack itemStack = new ItemStack(materials.get(0), 8);
             Objects.requireNonNull(player).getInventory().addItem(itemStack);
+            player.sendMessage(ChatColor.YELLOW + pluginAfnw + "アイテムの配布に成功しました。");
         } else if (command.getName().equalsIgnoreCase("vote-link")) {
             sender.sendMessage(ChatColor.GREEN + "=== Vote Site ===");
             sender.sendMessage(Vote + "Japan Minecraft Servers");
