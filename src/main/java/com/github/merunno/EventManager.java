@@ -40,7 +40,7 @@ public class EventManager implements Listener {
     @EventHandler
     public void onDeath(PlayerDeathEvent deathEvent) {
         String deathMsg = deathEvent.getDeathMessage();
-        deathEvent.setDeathMessage(ChatColor.RED + pluginAfnw + deathMsg);
+        deathEvent.setDeathMessage(ChatColor.RED + pluginAfnw + "プレイヤーが死亡しました。：" + deathMsg);
     }
 
     public void join_sound(Location loc) {
