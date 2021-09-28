@@ -31,7 +31,7 @@ public class CommandClass implements CommandExecutor {
             int emptySlot = player_inventory.firstEmpty();
             if(emptySlot == -1) {
                 player.sendMessage(ChatColor.RED + pluginAfnw + "アイテムの配布に失敗しました。");
-                player.sendMessage(ChatColor.RED + pluginAfnw + "インベントリが多くて配布できませんでした。次回以降は整理してから投票を行ってください。");
+                player.sendMessage(ChatColor.RED + "インベントリがいっぱいで配布できませんでした。次回以降は整理してから投票を行ってください。");
                 inventory_sound(loc);
                 return true;
             }
