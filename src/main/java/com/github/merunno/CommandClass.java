@@ -23,6 +23,9 @@ public class CommandClass implements CommandExecutor {
         if(command.getName().equalsIgnoreCase("randomitem")) {
             String id = args[0];
             var player = Bukkit.getPlayer(id);
+            if(player == null) {
+                return true;
+            }
             Inventory player_inventory = Objects.requireNonNull(player).getInventory();
             Location loc = (Objects.requireNonNull(player)).getLocation();
             int emptySlot = player_inventory.firstEmpty();
