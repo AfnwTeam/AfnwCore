@@ -32,7 +32,6 @@ public class EventManager implements Listener {
         join_sound(loc);
         if(emptySlot == -1) {
             player.sendMessage(ChatColor.RED + pluginAfnw + "警告： \nインベントリがいっぱいで空きがないです。この状態で投票してもアイテムを受け取れません。インベントリを整理したあとに投票を行ってください。");
-            inventory_sound(loc);
         }
     }
 
@@ -56,9 +55,5 @@ public class EventManager implements Listener {
 
     public void quit_sound(Location loc) {
         Objects.requireNonNull(loc.getWorld()).playSound(loc, Sound.BLOCK_BEACON_DEACTIVATE, 1, 1);
-    }
-
-    public void inventory_sound(Location loc) {
-        Objects.requireNonNull(loc.getWorld()).playSound(loc, Sound.BLOCK_ANVIL_HIT, 1, 1);
     }
 }

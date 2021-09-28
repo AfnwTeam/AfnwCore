@@ -5,6 +5,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.Arrays;
@@ -22,7 +23,15 @@ public class CommandClass implements CommandExecutor {
         if(command.getName().equalsIgnoreCase("randomitem")) {
             String id = args[0];
             var player = Bukkit.getPlayer(id);
+            Inventory player_inventory = Objects.requireNonNull(player).getInventory();
             Location loc = (Objects.requireNonNull(player)).getLocation();
+            int emptySlot = player_inventory.firstEmpty();
+            if(emptySlot == -1) {
+                player.sendMessage(ChatColor.RED + pluginAfnw + "アイテムの配布に失敗しました。");
+                player.sendMessage(ChatColor.RED + pluginAfnw + "インベントリが多くて配布できませんでした。次回以降は整理してから投票を行ってください。");
+                inventory_sound(loc);
+                return true;
+            }
             List<Material> materials = Arrays.asList(Material.values());
             Collections.shuffle(materials);
             ItemStack itemStack = new ItemStack(materials.get(0), 8);
@@ -30,7 +39,6 @@ public class CommandClass implements CommandExecutor {
             player.sendMessage(ChatColor.YELLOW + pluginAfnw + "アイテムの配布に成功しました。");
             sound(loc);
             particle(loc);
-            sender.sendMessage("配布に成功");
         } else if (command.getName().equalsIgnoreCase("vote-link")) {
             sender.sendMessage(ChatColor.GREEN + "=== Vote Site ===");
             sender.sendMessage(Vote + "Japan Minecraft Servers");
@@ -52,5 +60,10 @@ public class CommandClass implements CommandExecutor {
 
     private void particle(Location loc) {
         Objects.requireNonNull(loc.getWorld()).playEffect(loc, Effect.DRAGON_BREATH, 0, 14);
+    }
+
+
+    public void inventory_sound(Location loc) {
+        Objects.requireNonNull(loc.getWorld()).playSound(loc, Sound.BLOCK_ANVIL_HIT, 1, 1);
     }
 }
