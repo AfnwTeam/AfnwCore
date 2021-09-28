@@ -9,31 +9,38 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.inventory.Inventory;
 
 import java.util.Objects;
 
 public class EventManager implements Listener {
 
     String pluginAfnw = "[AfnwCore] ";
-    String pluginVersion = "v2.2.5";
+    String pluginVersion = "v2.3.0";
 
     @EventHandler
     public void onjoin(PlayerJoinEvent joinEvent) {
         Player player = joinEvent.getPlayer();
-        joinEvent.setJoinMessage(ChatColor.GRAY + pluginAfnw + player.getName() + "がAfnwにログインしました。");
+        Inventory player_inventory = player.getInventory();
         Location loc = player.getLocation();
-        player.sendMessage(ChatColor.WHITE + "Afnwにようこそ！\nアイテムを入手するには投票を行ってください。：" + ChatColor.YELLOW + "/vote-link");
+        int emptySlot = player_inventory.firstEmpty();
         player.sendTitle(ChatColor.AQUA + "Afnw", ChatColor.WHITE + pluginVersion, 3, 60, 1);
+        player.sendMessage("Afnwにようこそ！\nアイテムを入手するには投票を行ってください。： " + ChatColor.YELLOW + "/vote-link");
+        player.sendMessage("現在のバージョンは " + ChatColor.YELLOW + pluginVersion + ChatColor.WHITE + " です。");
+        player.sendMessage("更新情報: https://merunno.github.io/AfnwCore/");
+        joinEvent.setJoinMessage(ChatColor.GRAY + player.getName() + "がAfnwにログインしました。");
         join_sound(loc);
-        player.sendMessage(ChatColor.LIGHT_PURPLE + pluginAfnw + "現在のバージョンは " + ChatColor.YELLOW + pluginVersion + ChatColor.LIGHT_PURPLE + " です。");
-        player.sendMessage(ChatColor.LIGHT_PURPLE + "更新情報: https://merunno.github.io/AfnwCore/v2.x/" + pluginVersion + ".html");
+        if(emptySlot == -1) {
+            player.sendMessage(ChatColor.RED + pluginAfnw + "警告： \nインベントリがいっぱいで空きがないです。この状態で投票してもアイテムを受け取れません。インベントリを整理したあとに投票を行ってください。");
+            inventory_sound(loc);
+        }
     }
 
     @EventHandler
     public void onquit(PlayerQuitEvent quitEvent) {
         Player player = quitEvent.getPlayer();
         Location loc = player.getLocation();
-        quitEvent.setQuitMessage(ChatColor.GRAY + pluginAfnw + player.getName() + "がAfnwからログアウトしました。");
+        quitEvent.setQuitMessage(ChatColor.GRAY + player.getName() + "がAfnwからログアウトしました。");
         quit_sound(loc);
     }
 
@@ -49,5 +56,9 @@ public class EventManager implements Listener {
 
     public void quit_sound(Location loc) {
         Objects.requireNonNull(loc.getWorld()).playSound(loc, Sound.BLOCK_BEACON_DEACTIVATE, 1, 1);
+    }
+
+    public void inventory_sound(Location loc) {
+        Objects.requireNonNull(loc.getWorld()).playSound(loc, Sound.BLOCK_ANVIL_HIT, 1, 1);
     }
 }
