@@ -67,6 +67,6 @@ public class CommandClass implements CommandExecutor {
 
 
     public void inventory_sound(Location loc) {
-        Objects.requireNonNull(loc.getWorld()).playSound(loc, Sound.BLOCK_ANVIL_HIT, 1, 1);
+        Objects.requireNonNull(loc.getWorld()).playSound(loc, Sound.BLOCK_ANVIL_DESTROY, 1, 1);
     }
 }
