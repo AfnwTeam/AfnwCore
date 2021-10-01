@@ -5,7 +5,6 @@ import com.github.merunno.commands.randomitem;
 import com.github.merunno.listener.join;
 import com.github.merunno.listener.quit;
 import com.github.merunno.listener.death;
-import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Objects;
