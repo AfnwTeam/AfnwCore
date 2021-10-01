@@ -16,7 +16,8 @@ import java.util.Objects;
 public class EventManager implements Listener {
 
     String pluginAfnw = "[AfnwCore] ";
-    String pluginVersion = "v2.3.0";
+    String pluginVersion = "v3.0.0";
+
 
     @EventHandler
     public void onjoin(PlayerJoinEvent joinEvent) {
