@@ -12,7 +12,6 @@ public class InventoryClose implements Listener {
     @EventHandler
     public void onClose(InventoryCloseEvent closeEvent) {
         Player player = (Player) closeEvent.getPlayer();
-        String message = ChatColor.RED + "[AfnwCore] インベントリがいっぱいです。";
-        player.sendMessage(message);
+        player.sendMessage(ChatColor.RED + "[AfnwCore] インベントリがいっぱいです。");
     }
 }

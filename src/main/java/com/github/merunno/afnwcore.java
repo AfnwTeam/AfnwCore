@@ -21,7 +21,7 @@ public final class afnwcore extends JavaPlugin {
         Objects.requireNonNull(getCommand("randomitem")).setExecutor(new randomitem());
         getLogger().info("コマンドの読み込み.... Done.");
 
-        getLogger().info("イベントの読み込み....");
+        getLogger().info("イベントの読み込み開始....");
         getServer().getPluginManager().registerEvents(new join(), this);
         getServer().getPluginManager().registerEvents(new quit(), this);
         getServer().getPluginManager().registerEvents(new death(), this);

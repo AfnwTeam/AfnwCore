@@ -24,8 +24,8 @@ public class randomitem implements CommandExecutor {
             if (player == null) {
                 return true;
             }
-            Inventory player_inventory = Objects.requireNonNull(player).getInventory();
-            Location loc = (Objects.requireNonNull(player)).getLocation();
+            Inventory player_inventory = player.getInventory();
+            Location loc = player.getLocation();
             int emptySlot = player_inventory.firstEmpty();
             if (emptySlot == -1) {
                 player.sendMessage(ChatColor.RED + pluginAfnw + "アイテムの配布に失敗しました。");
@@ -40,6 +40,9 @@ public class randomitem implements CommandExecutor {
             player.sendMessage(ChatColor.YELLOW + pluginAfnw + "アイテムの配布に成功しました。");
             sound(loc);
             particle(loc);
+            if(loc.getWorld() != null) {
+                return true;
+            }
         }
         return true;
     }
