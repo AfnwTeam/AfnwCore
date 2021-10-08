@@ -5,6 +5,7 @@ import com.github.merunno.commands.randomitem;
 import com.github.merunno.listener.join;
 import com.github.merunno.listener.quit;
 import com.github.merunno.listener.death;
+import com.github.merunno.listener.InventoryClose;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Objects;
@@ -24,6 +25,7 @@ public final class afnwcore extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new join(), this);
         getServer().getPluginManager().registerEvents(new quit(), this);
         getServer().getPluginManager().registerEvents(new death(), this);
+        getServer().getPluginManager().registerEvents(new InventoryClose(), this);
         getLogger().info("イベントの読み込み.... Done.");
 
         getLogger().info("Afnwの読み込みが完了しました。");
