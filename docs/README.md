@@ -1,5 +1,9 @@
 # "Afnw" Release Notes
 
+## v3.x
+
+* [v3.0.0](v3.x/v3.0.0.md) (2021/10/10 release)
+
 ## v2.x
 
 * [v2.3.0](v2.x/v2.3.0.md) (2021/09/28 release)
