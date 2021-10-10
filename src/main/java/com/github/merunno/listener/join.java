@@ -27,9 +27,9 @@ public class join implements Listener {
 
         player.sendTitle(ChatColor.AQUA + "Afnw", null, 3, 60, 1);
         player.sendMessage(ChatColor.YELLOW + "Afnwにようこそ！");
-        player.sendMessage(pluginStar + "アイテムの入手 :: " + ChatColor.YELLOW + "/afnwcore vote");
-        player.sendMessage(pluginStar + "現在のバージョン :: " + ChatColor.YELLOW + pluginVersion);
-        player.sendMessage(pluginStar + "更新情報 :: https://merunno.github.io/AfnwCore/");
+        player.sendMessage(pluginStar + "アイテムの入手 → " + ChatColor.YELLOW + "/afnwcore vote");
+        player.sendMessage(pluginStar + "現在のバージョン → " + ChatColor.YELLOW + pluginVersion);
+        player.sendMessage(pluginStar + "更新情報 → " + ChatColor.YELLOW + "https://afnwcore.merunno.dev/");
 
         joinEvent.setJoinMessage(ChatColor.GRAY + pluginAfnw + player.getName() + "がAfnwにログインしました。");
         join_sound(loc);
