@@ -1,6 +1,6 @@
 package com.github.merunno;
 
-import com.github.merunno.commands.afnwcoreCommand;
+import com.github.merunno.commands.vote;
 import com.github.merunno.commands.randomitem;
 import com.github.merunno.listener.join;
 import com.github.merunno.listener.quit;
@@ -17,7 +17,7 @@ public final class afnwcore extends JavaPlugin {
         getLogger().info("Afnwの読み込みを開始します。");
 
         getLogger().info("コマンドの読み込み開始.....");
-        Objects.requireNonNull(getCommand("afnwcore")).setExecutor(new afnwcoreCommand());
+        Objects.requireNonNull(getCommand("afnwcore")).setExecutor(new vote());
         Objects.requireNonNull(getCommand("randomitem")).setExecutor(new randomitem());
         getLogger().info("コマンドの読み込み.... Done.");
 

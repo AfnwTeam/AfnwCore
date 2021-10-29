@@ -18,7 +18,6 @@ commands:
   randomitem:
     description: アイテムを指定したユーザーに配布します。(コンソールでのみ実行できます。また、プラグイン実行用です。)
     permission: afnw.op.commands
-  afnwcore:
-    description: AfnwCore commands
-    aliases:
-      - ac
+  vote:
+    description: 投票サイトのURLを表示します。
+    permission: afnw.commands
