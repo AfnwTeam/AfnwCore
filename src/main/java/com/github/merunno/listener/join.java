@@ -1,5 +1,6 @@
 package com.github.merunno.listener;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Sound;
@@ -8,6 +9,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.Inventory;
+import org.spigotmc.event.player.PlayerSpawnLocationEvent;
 
 import java.util.Objects;
 
@@ -17,6 +19,12 @@ public class join implements Listener {
     String pluginVersion = "v3.0.0";
     String pluginStar = ChatColor.YELLOW + "★" + ChatColor.WHITE;
 
+    @EventHandler
+    public void onplayerSpawn(PlayerSpawnLocationEvent spawnLocationEvent) {
+        Player player = spawnLocationEvent.getPlayer();
+        Bukkit.broadcastMessage("Waiting for connection....");
+        player.sendMessage(pluginAfnw + "Connecting....");
+    }
 
     @EventHandler
     public void onjoin(PlayerJoinEvent joinEvent) {

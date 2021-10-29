@@ -17,7 +17,7 @@ public final class afnwcore extends JavaPlugin {
         getLogger().info("Afnwの読み込みを開始します。");
 
         getLogger().info("コマンドの読み込み開始.....");
-        Objects.requireNonNull(getCommand("afnwcore")).setExecutor(new vote());
+        Objects.requireNonNull(getCommand("vote")).setExecutor(new vote());
         Objects.requireNonNull(getCommand("randomitem")).setExecutor(new randomitem());
         getLogger().info("コマンドの読み込み.... Done.");
 
