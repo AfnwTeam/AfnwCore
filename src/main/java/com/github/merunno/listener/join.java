@@ -16,7 +16,7 @@ import java.util.Objects;
 public class join implements Listener {
 
     String pluginAfnw = "[AfnwCore] ";
-    String pluginVersion = "v3.1.0";
+    String pluginVersion = "v3.2.0";
     String pluginStar = ChatColor.YELLOW + "★" + ChatColor.WHITE;
 
     @EventHandler
@@ -33,14 +33,14 @@ public class join implements Listener {
         Location loc = player.getLocation();
         int emptySlot = player_inventory.firstEmpty();
 
+        joinEvent.setJoinMessage(ChatColor.GRAY + pluginAfnw + player.getName() + "がAfnwにログインしました。");
+        join_sound(loc);
+
         player.sendTitle(ChatColor.AQUA + "Afnw", null, 3, 60, 1);
         player.sendMessage(ChatColor.YELLOW + "Afnwにようこそ！");
         player.sendMessage(pluginStar + "アイテムの入手 → " + ChatColor.YELLOW + "/vote");
         player.sendMessage(pluginStar + "現在のバージョン → " + ChatColor.YELLOW + pluginVersion);
         player.sendMessage(pluginStar + "更新情報 → " + ChatColor.YELLOW + "https://afnwcore.merunno.dev/");
-
-        joinEvent.setJoinMessage(ChatColor.GRAY + pluginAfnw + player.getName() + "がAfnwにログインしました。");
-        join_sound(loc);
 
         if (emptySlot == -1) {
             player.sendMessage(ChatColor.RED + pluginAfnw + "インベントリがいっぱいで空きがないです。この状態で投票してもアイテムを受け取れません。インベントリを整理したあとに投票を行ってください。");
