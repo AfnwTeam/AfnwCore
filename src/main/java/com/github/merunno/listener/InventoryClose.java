@@ -14,7 +14,7 @@ public class InventoryClose implements Listener {
         Player player = (Player) closeEvent.getPlayer();
         int emptySlot = player.getInventory().firstEmpty();
         if (emptySlot == -1) {
-            player.sendMessage(ChatColor.RED + "[AfnwCore] インベントリがいっぱいです。");
+            player.sendMessage(ChatColor.RED + "インベントリがいっぱいです。");
         }
     }
 }
