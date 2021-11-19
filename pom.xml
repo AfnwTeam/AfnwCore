@@ -11,7 +11,7 @@
 
     <name>afnwcore</name>
 
-    <description>A world with only one bedrock.</description>
+    <description>There's only one rock in this world.</description>
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
