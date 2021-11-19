@@ -20,5 +20,5 @@ commands:
     permission: afnw.op.commands
   vote:
     description: 投票サイトのURLを表示します。
-  trust:
+  trush:
     description: ゴミ箱を表示します。
