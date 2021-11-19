@@ -36,7 +36,7 @@ public class join implements Listener {
         joinEvent.setJoinMessage(ChatColor.GRAY + pluginAfnw + player.getName() + "がAfnwにログインしました。");
         join_sound(loc);
 
-        player.sendTitle(ChatColor.AQUA + "Afnw", null, 3, 60, 1);
+        player.sendTitle(ChatColor.AQUA + "Afnw", "この世界にあるのは、 岩盤一つだけ。", 3, 60, 1);
         player.sendMessage(ChatColor.YELLOW + "Afnwにようこそ！");
         player.sendMessage(pluginStar + "アイテムの入手 → " + ChatColor.YELLOW + "/vote");
         player.sendMessage(pluginStar + "現在のバージョン → " + ChatColor.YELLOW + pluginVersion);
