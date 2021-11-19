@@ -41,6 +41,7 @@ public class join implements Listener {
         player.sendMessage(pluginStar + "アイテムの入手 → " + ChatColor.YELLOW + "/vote");
         player.sendMessage(pluginStar + "現在のバージョン → " + ChatColor.YELLOW + pluginVersion);
         player.sendMessage(pluginStar + "更新情報 → " + ChatColor.YELLOW + "https://afnwcore.merunno.dev/");
+        player.sendMessage(pluginStar + "アジ鯖Discord → " + ChatColor.YELLOW + "https://discord.gg/azisaba");
 
         if (emptySlot == -1) {
             player.sendMessage(ChatColor.RED + pluginAfnw + "インベントリがいっぱいで空きがないです。この状態で投票してもアイテムを受け取れません。インベントリを整理したあとに投票を行ってください。");
