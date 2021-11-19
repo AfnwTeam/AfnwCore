@@ -8,13 +8,13 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 
-public class trust implements CommandExecutor {
+public class trash implements CommandExecutor {
 
     String prefix = "[AfnwCore] ";
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] strings) {
-        if(command.getName().equalsIgnoreCase("trust")) {
+        if(command.getName().equalsIgnoreCase("trash")) {
             sender.sendMessage(prefix + "ゴミ箱を開きました。");
             display_gui((Player) sender);
         }

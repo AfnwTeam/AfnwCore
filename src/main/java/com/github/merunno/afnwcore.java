@@ -1,6 +1,6 @@
 package com.github.merunno;
 
-import com.github.merunno.commands.trust;
+import com.github.merunno.commands.trash;
 import com.github.merunno.commands.vote;
 import com.github.merunno.commands.randomitem;
 import com.github.merunno.listener.*;
@@ -17,7 +17,7 @@ public final class afnwcore extends JavaPlugin {
         getLogger().info("コマンドの読み込み開始.....");
         Objects.requireNonNull(getCommand("vote")).setExecutor(new vote());
         Objects.requireNonNull(getCommand("randomitem")).setExecutor(new randomitem());
-        Objects.requireNonNull(getCommand("trust")).setExecutor(new trust());
+        Objects.requireNonNull(getCommand("trash")).setExecutor(new trash());
         getLogger().info("コマンドの読み込み.... Done.");
 
         getLogger().info("イベントの読み込み開始....");
