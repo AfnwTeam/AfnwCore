@@ -22,3 +22,7 @@ commands:
     description: 投票サイトのURLを表示します。
   trash:
     description: ゴミ箱を表示します。
+  personal-chests:
+    description: パーソナルチェスト(個人チェスト)を表示します。
+    aliases:
+      - pc

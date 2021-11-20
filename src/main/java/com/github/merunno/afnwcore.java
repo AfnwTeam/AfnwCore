@@ -1,5 +1,6 @@
 package com.github.merunno;
 
+import com.github.merunno.commands.personal_chest;
 import com.github.merunno.commands.trash;
 import com.github.merunno.commands.vote;
 import com.github.merunno.commands.randomitem;
@@ -18,6 +19,7 @@ public final class afnwcore extends JavaPlugin {
         Objects.requireNonNull(getCommand("vote")).setExecutor(new vote());
         Objects.requireNonNull(getCommand("randomitem")).setExecutor(new randomitem());
         Objects.requireNonNull(getCommand("trash")).setExecutor(new trash());
+        Objects.requireNonNull(getCommand("personal-chests")).setExecutor(new personal_chest());
         getLogger().info("コマンドの読み込み.... Done.");
 
         getLogger().info("イベントの読み込み開始....");
