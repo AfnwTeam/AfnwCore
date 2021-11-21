@@ -27,6 +27,11 @@ commands:
   randomitem:
     description: アイテムを指定したユーザーに配布します。(コンソールでのみ実行できます。また、プラグイン実行用です。)
     permission: afnw.op.commands
+    permission-message: "あなたはアイテムの配布作業を行うことは出来ません。"
+  hoten:
+    description: 指定したユーザーにアイテムを補填します。
+    permission: afnw.op.commands
+    permission-message: "あなたは補填作業を行うことは出来ません。"
   vote:
     description: 投票サイトのURLを表示します。
   trash:
