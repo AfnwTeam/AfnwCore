@@ -26,3 +26,8 @@ commands:
     description: パーソナルチェスト(個人チェスト)を表示します。
     aliases:
       - pc
+  open-personal-chests:
+    description: 運営権限で指定したユーザーのパーソナルチェストを開きます。
+    aliases:
+      - opc
+    permission: afnw.op.commands
