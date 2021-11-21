@@ -49,7 +49,16 @@ public class randomitem implements CommandExecutor {
 
     private static boolean isAllowed(Material type) {
         if (!type.isItem()) return false;
-        return type != Material.BEDROCK;
+        switch (type) {
+            case BEDROCK:
+            case STRUCTURE_BLOCK:
+            case STRUCTURE_VOID:
+            case COMMAND_BLOCK:
+            case CHAIN_COMMAND_BLOCK:
+            case COMMAND_BLOCK_MINECART:
+            case REPEATING_COMMAND_BLOCK: return false;
+            default: return true;
+        }
     }
 
     private void sound(Location loc) {
@@ -59,7 +68,6 @@ public class randomitem implements CommandExecutor {
     private void particle(Location loc) {
         Objects.requireNonNull(loc.getWorld()).playEffect(loc, Effect.DRAGON_BREATH, 0, 14);
     }
-
 
     public void inventory_sound(Location loc) {
         Objects.requireNonNull(loc.getWorld()).playSound(loc, Sound.BLOCK_ANVIL_DESTROY, 1, 1);
