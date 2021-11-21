@@ -15,10 +15,23 @@ permissions:
     default: op
 
 commands:
+  help:
+    description: コマンド一覧を表示します。
+    aliases:
+      - menu
+      - m
+  about:
+    description: 遊び方の本をスポーンさせます。
+    aliases:
+      - book
   randomitem:
     description: アイテムを指定したユーザーに配布します。(コンソールでのみ実行できます。また、プラグイン実行用です。)
     permission: afnw.op.commands
   vote:
     description: 投票サイトのURLを表示します。
-  trust:
+  trash:
     description: ゴミ箱を表示します。
+  personal-chests:
+    description: パーソナルチェスト(個人チェスト)を表示します。
+    aliases:
+      - pc
