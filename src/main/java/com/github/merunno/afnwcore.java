@@ -28,6 +28,7 @@ public final class afnwcore extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new quit(), this);
         getServer().getPluginManager().registerEvents(new death(), this);
         getServer().getPluginManager().registerEvents(new InventoryClose(), this);
+        getServer().getPluginManager().registerEvents(new saplingBreakCanceller(), this);
         getLogger().info("イベントの読み込み.... Done.");
 
         getLogger().info("Afnwの読み込みが完了しました。");
