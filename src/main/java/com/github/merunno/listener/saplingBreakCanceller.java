@@ -20,7 +20,7 @@ public class saplingBreakCanceller implements Listener {
         List<Material> materials = Arrays.asList(Material.values());
         if(item.hasMetadata(String.valueOf(materials))) {
             breakEvent.setCancelled(true);
-            player.sendMessage(ChatColor.RED + "[AfnwCore ]" + "一度設置した苗木は破壊できません。");
+            player.sendMessage(ChatColor.RED + "[AfnwCore] " + "一度設置した苗木は破壊できません。");
         }
     }
 
