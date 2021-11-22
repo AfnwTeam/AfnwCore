@@ -40,3 +40,8 @@ commands:
     description: パーソナルチェスト(個人チェスト)を表示します。
     aliases:
       - pc
+  notice:
+    description: 全体通知を行います。
+    permission: afnw.op.commands
+    permission-message: "あなたは全体通知を行うことは出来ません。"
+

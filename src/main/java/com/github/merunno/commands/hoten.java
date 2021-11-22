@@ -48,7 +48,7 @@ public class hoten implements CommandExecutor {
             Bukkit.getServer().getLogger().info("[AfnwCore::補填] " + sender.getName() + " - " + player.getName() + " >>> " + Objects.requireNonNull(voteItem.getItemMeta()).getDisplayName());
             sound(loc);
             particle(loc);
-            if(loc.getWorld() != null) {
+            if (loc.getWorld() != null) {
                 return true;
             }
         }
@@ -68,8 +68,10 @@ public class hoten implements CommandExecutor {
             case BARRIER:
             case LIGHT:
             case JIGSAW:
-            case DEBUG_STICK: return false;
-            default: return true;
+            case DEBUG_STICK:
+                return false;
+            default:
+                return true;
         }
     }
 

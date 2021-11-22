@@ -16,12 +16,12 @@ public class help implements CommandExecutor {
         if (command.getName().equalsIgnoreCase("help")) {
             sender.sendMessage(ChatColor.AQUA + "== AfnwCore Help ==");
             sender.sendMessage("https://github.com/merunno/AfnwCore");
-            sender.sendMessage(ChatColor.AQUA + "/help" + "：" +ChatColor.WHITE + "ヘルプの表示");
-            sender.sendMessage(ChatColor.AQUA + "/vote" + "：" +ChatColor.WHITE + "投票先リンク一覧を表示");
-            sender.sendMessage(ChatColor.AQUA + "/trash" + "：" +ChatColor.WHITE + "ゴミ箱を表示");
-            sender.sendMessage(ChatColor.AQUA + "/pc" + "：" +ChatColor.WHITE + "パーソナルチェストをオープン");
-            sender.sendMessage(ChatColor.AQUA + "/about" + "：" +ChatColor.WHITE + "遊び方の本を呼び出す");
-        } else if(command.getName().equalsIgnoreCase("about")) {
+            sender.sendMessage(ChatColor.AQUA + "/help" + "：" + ChatColor.WHITE + "ヘルプの表示");
+            sender.sendMessage(ChatColor.AQUA + "/vote" + "：" + ChatColor.WHITE + "投票先リンク一覧を表示");
+            sender.sendMessage(ChatColor.AQUA + "/trash" + "：" + ChatColor.WHITE + "ゴミ箱を表示");
+            sender.sendMessage(ChatColor.AQUA + "/pc" + "：" + ChatColor.WHITE + "パーソナルチェストをオープン");
+            sender.sendMessage(ChatColor.AQUA + "/about" + "：" + ChatColor.WHITE + "遊び方の本を呼び出す");
+        } else if (command.getName().equalsIgnoreCase("about")) {
             Player player = (Player) sender;
             ItemStack item = new ItemStack(Material.WRITTEN_BOOK);
             BookMeta meta = (BookMeta) item.getItemMeta();

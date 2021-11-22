@@ -16,15 +16,8 @@ import java.util.Objects;
 public class join implements Listener {
 
     String pluginAfnw = "[AfnwCore] ";
-    String pluginVersion = "v3.2.3";
+    String pluginVersion = "v3.2.4";
     String pluginStar = ChatColor.YELLOW + "★" + ChatColor.WHITE;
-
-    @EventHandler
-    public void onplayerSpawn(PlayerSpawnLocationEvent spawnLocationEvent) {
-        Player player = spawnLocationEvent.getPlayer();
-        Bukkit.broadcastMessage("Waiting for connection....");
-        player.sendMessage(pluginAfnw + "Connecting....");
-    }
 
     @EventHandler
     public void onjoin(PlayerJoinEvent joinEvent) {
@@ -45,7 +38,7 @@ public class join implements Listener {
             player.sendMessage(ChatColor.RED + pluginAfnw + "インベントリがいっぱいで空きがないです。この状態で投票してもアイテムを受け取れません。インベントリを整理したあとに投票を行ってください。");
         }
 
-        if(player.hasPermission("afnw.op.commands")) {
+        if (player.hasPermission("afnw.op.commands")) {
             joinEvent.setJoinMessage(ChatColor.YELLOW + "[AfnwCore：Admin] " + player.getName() + "がAfnwにログインしました。");
             return;
         }

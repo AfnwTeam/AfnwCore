@@ -14,7 +14,7 @@ public class trash implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] strings) {
-        if(command.getName().equalsIgnoreCase("trash")) {
+        if (command.getName().equalsIgnoreCase("trash")) {
             sender.sendMessage(prefix + "ゴミ箱を開きました。");
             display_gui((Player) sender);
         }
