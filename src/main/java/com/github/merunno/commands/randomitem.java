@@ -34,13 +34,13 @@ public class randomitem implements CommandExecutor {
             }
             List<Material> materials = Arrays.asList(Material.values());
             Collections.shuffle(materials);
-            ItemStack voteScaffold = new ItemStack(Material.DIRT, 8);
+            ItemStack voteScaffold = new ItemStack(Material.SCAFFOLDING, 8);
             ItemStack voteItem = new ItemStack(materials.get(0), 8);
             ItemMeta meta = voteScaffold.getItemMeta();
             Objects.requireNonNull(meta).setDisplayName(ChatColor.AQUA + "足場ブロック");
             List<String> lores = new ArrayList<>();
             lores.add("投票特典として獲得した足場として使えるブロックです。");
-            lores.add("土に変化します。");
+            lores.add("みなさんのご要望で土からアップグレードされました。やったね！あじちゃん！");
             meta.setLore(lores);
             voteScaffold.setItemMeta(meta);
             Objects.requireNonNull(player).getInventory().addItem(voteScaffold);
