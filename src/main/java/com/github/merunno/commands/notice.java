@@ -19,8 +19,8 @@ public class notice implements CommandExecutor {
                 return true;
             }
 
-            Bukkit.getServer().broadcastMessage(ChatColor.RED + prefix + noticeMessage);
-            sender.sendMessage(ChatColor.YELLOW + "通知を行いました。");
+            Bukkit.getServer().broadcastMessage(ChatColor.YELLOW + prefix + noticeMessage);
+            sender.sendMessage(ChatColor.AQUA + "通知を行いました。");
 
         }
         return true;
