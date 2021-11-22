@@ -4,13 +4,12 @@ import org.bukkit.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Item;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class randomitem implements CommandExecutor {
 
@@ -35,10 +34,19 @@ public class randomitem implements CommandExecutor {
             }
             List<Material> materials = Arrays.asList(Material.values());
             Collections.shuffle(materials);
-            ItemStack itemStack = new ItemStack(materials.get(0), 8);
-            Objects.requireNonNull(player).getInventory().addItem(itemStack);
+            ItemStack voteScaffold = new ItemStack(Material.DIRT, 8);
+            ItemStack voteItem = new ItemStack(materials.get(0), 8);
+            ItemMeta meta = voteScaffold.getItemMeta();
+            Objects.requireNonNull(meta).setDisplayName(ChatColor.AQUA + "足場ブロック");
+            List<String> lores = new ArrayList<>();
+            lores.add("投票特典として獲得した足場として使えるブロックです。");
+            lores.add("土に変化します。");
+            meta.setLore(lores);
+            voteScaffold.setItemMeta(meta);
+            Objects.requireNonNull(player).getInventory().addItem(voteScaffold);
+            Objects.requireNonNull(player).getInventory().addItem(voteItem);
             player.sendMessage(ChatColor.YELLOW + pluginAfnw + "アイテムの配布に成功しました。");
-            Bukkit.getServer().getLogger().info("[AfnwCore::アイテム配布] " + player.getName() + " >>> " + Objects.requireNonNull(itemStack.getItemMeta()).getDisplayName());
+            Bukkit.getServer().getLogger().info("[AfnwCore::アイテム配布] " + player.getName() + " >>> " + Objects.requireNonNull(voteItem.getItemMeta()).getDisplayName());
             sound(loc);
             particle(loc);
             if(loc.getWorld() != null) {
