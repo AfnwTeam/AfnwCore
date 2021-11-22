@@ -38,6 +38,8 @@ public class hoten implements CommandExecutor {
             ItemStack itemStack = new ItemStack(materials.get(0), 8);
             Objects.requireNonNull(player).getInventory().addItem(itemStack);
             player.sendMessage(ChatColor.YELLOW + pluginAfnw + "補填に成功しました。ご迷惑おかけしました。");
+            sender.sendMessage(ChatColor.AQUA + pluginAfnw + player.getName() + "に対して補填を実行しました。お相手にご確認のメッセージを送ってください。");
+            Bukkit.getServer().getLogger().info("[AfnwCore::補填] " + sender.getName() + " - " + player.getName() + " >>> " + Objects.requireNonNull(itemStack.getItemMeta()).getDisplayName());
             sound(loc);
             particle(loc);
             if(loc.getWorld() != null) {

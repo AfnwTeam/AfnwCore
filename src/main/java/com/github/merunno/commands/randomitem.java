@@ -38,6 +38,7 @@ public class randomitem implements CommandExecutor {
             ItemStack itemStack = new ItemStack(materials.get(0), 8);
             Objects.requireNonNull(player).getInventory().addItem(itemStack);
             player.sendMessage(ChatColor.YELLOW + pluginAfnw + "アイテムの配布に成功しました。");
+            Bukkit.getServer().getLogger().info("[AfnwCore::アイテム配布] " + player.getName() + " >>> " + Objects.requireNonNull(itemStack.getItemMeta()).getDisplayName());
             sound(loc);
             particle(loc);
             if(loc.getWorld() != null) {
