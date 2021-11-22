@@ -56,7 +56,11 @@ public class randomitem implements CommandExecutor {
             case COMMAND_BLOCK:
             case CHAIN_COMMAND_BLOCK:
             case COMMAND_BLOCK_MINECART:
-            case REPEATING_COMMAND_BLOCK: return false;
+            case REPEATING_COMMAND_BLOCK:
+            case BARRIER:
+            case LIGHT:
+            case JIGSAW:
+            case DEBUG_STICK: return false;
             default: return true;
         }
     }
