@@ -30,7 +30,6 @@ public final class afnwcore extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new death(), this);
         getServer().getPluginManager().registerEvents(new InventoryClose(), this);
         getServer().getPluginManager().registerEvents(new saplingBreakCanceller(), this);
-        getServer().getPluginManager().registerEvents(new anvil(), this);
         getServer().getPluginManager().registerEvents(new brew(), this);
         getLogger().info("イベントの読み込み.... Done.");
 
