@@ -31,7 +31,7 @@ public class randomitem implements CommandExecutor {
                 inventory_sound(loc);
                 return true;
             }
-            List<Material> materials = new ArrayList<>(Material.values());
+            List<Material> materials = new ArrayList<>(Arrays.asList(Material.values()));
             Collections.shuffle(materials);
             materials.removeIf(type -> !isAllowed(type));
             ItemStack voteScaffold = new ItemStack(Material.SCAFFOLDING, 8);
