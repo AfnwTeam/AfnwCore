@@ -70,6 +70,7 @@ public class hoten implements CommandExecutor {
             case LIGHT:
             case JIGSAW:
             case DEBUG_STICK:
+            case END_PORTAL_FRAME:
                 return false;
             default:
                 return true;
