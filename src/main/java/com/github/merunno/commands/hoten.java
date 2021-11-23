@@ -31,8 +31,9 @@ public class hoten implements CommandExecutor {
                 inventory_sound(loc);
                 return true;
             }
-            List<Material> materials = Arrays.asList(Material.values());
+            List<Material> materials = new ArrayList<>(Arrays.asList(Material.values()));
             Collections.shuffle(materials);
+            materials.removeIf(type -> !isAllowed(type));
             ItemStack voteScaffold = new ItemStack(Material.SCAFFOLDING, 8);
             ItemStack voteItem = new ItemStack(materials.get(0), 8);
             ItemMeta meta = voteScaffold.getItemMeta();
