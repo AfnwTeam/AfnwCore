@@ -70,6 +70,7 @@ public class randomitem implements CommandExecutor {
             case LIGHT:
             case JIGSAW:
             case END_PORTAL_FRAME:
+            case END_PORTAL:
             case DEBUG_STICK: return false;
             default: return true;
         }
