@@ -48,7 +48,8 @@ public class join_first implements Listener {
             player.sendMessage("まずは挨拶をして、交流を始めてみよう。");
             player.sendMessage(ChatColor.YELLOW + "注意：アジ鯖各サーバーと大きく違う点として公開時間が制限されています。");
             player.sendMessage(ChatColor.YELLOW + "詳しくは公式Discord \"#お知らせ|Afnw鯖\" をご覧ください。");
-            player.sendMessage(ChatColor.GREEN + "======================");
+            player.sendMessage(ChatColor.YELLOW + "ルール:https://www.azisaba.net/server-intro/a-fall-new-world/#rule");
+            player.sendMessage(ChatColor.GREEN + "===================");
             player.getInventory().addItem(item);
         }
     }
