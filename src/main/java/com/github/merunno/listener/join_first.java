@@ -40,7 +40,15 @@ public class join_first implements Listener {
 
         if (!player.hasPlayedBefore()) {
             joinEvent.setJoinMessage(ChatColor.GRAY + "[AfnwCore] " + player.getName() + "がAfnwに初参加しました!");
-            player.sendMessage("[AfnwCore] Afnwの遊び方を書いた本を配布しました。ぜひ一読ください。");
+            player.sendMessage("[AfnwCore] Afnwの遊び方を書いた本を配布しました。ぜひ一読ください。(/bookでいつでも呼び出せます。)");
+            player.sendMessage(ChatColor.GREEN + "=== Afnwへようこそ！ ===");
+            player.sendMessage("Afnwは投票でのみアイテムが手に入る特殊な状況下でサバイバルをする新感覚マルチサーバーです。");
+            player.sendMessage("岩盤から広がるユーザーたちの輪に参加して謎の世界を生き抜こう。");
+            player.sendMessage("ロビー真ん中のポータルの穴へ飛び込もう。プレイヤーが待っています!");
+            player.sendMessage("まずは挨拶をして、交流を始めてみよう。");
+            player.sendMessage(ChatColor.YELLOW + "注意：アジ鯖各サーバーと大きく違う点として公開時間が制限されています。");
+            player.sendMessage(ChatColor.YELLOW + "詳しくは公式Discord \"#お知らせ|Afnw鯖\" をご覧ください。");
+            player.sendMessage(ChatColor.GREEN + "======================");
             player.getInventory().addItem(item);
         }
     }
