@@ -44,4 +44,8 @@ commands:
     description: 全体通知を行います。
     permission: afnw.op.commands
     permission-message: "あなたは全体通知を行うことは出来ません。"
+  sign:
+    description: サインを出します。
+    permission: afnw.op.commands
+    permission-message: "あなたはサインを行うことは出来ません。"
 
