@@ -44,7 +44,9 @@ public class hoten implements CommandExecutor {
             voteScaffold.setItemMeta(meta);
             Objects.requireNonNull(player).getInventory().addItem(voteScaffold);
             Objects.requireNonNull(player).getInventory().addItem(voteItem);
-            player.sendMessage(ChatColor.YELLOW + pluginAfnw + "補填に成功しました。ご迷惑おかけしました。");
+            player.sendMessage(ChatColor.AQUA + pluginAfnw + "補填に成功しました。ご迷惑おかけしました。");
+            player.sendTitle(ChatColor.YELLOW + "投票ありがとうございます!", null, 3, 60, 1);
+            Bukkit.broadcastMessage(ChatColor.YELLOW + pluginAfnw + player.getName() + "が投票(補填)でアイテムを入手しました。");
             sender.sendMessage(ChatColor.AQUA + pluginAfnw + player.getName() + "に対して補填を実行しました。お相手にご確認のメッセージを送ってください。");
             Bukkit.getServer().getLogger().info("[AfnwCore::補填] " + sender.getName() + " - " + player.getName() + " >>> " + Objects.requireNonNull(voteItem.getItemMeta()).getDisplayName());
             sound(loc);
@@ -85,7 +87,6 @@ public class hoten implements CommandExecutor {
     private void particle(Location loc) {
         Objects.requireNonNull(loc.getWorld()).playEffect(loc, Effect.DRAGON_BREATH, 0, 14);
     }
-
 
     public void inventory_sound(Location loc) {
         Objects.requireNonNull(loc.getWorld()).playSound(loc, Sound.BLOCK_ANVIL_DESTROY, 1, 1);

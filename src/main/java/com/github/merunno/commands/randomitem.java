@@ -45,7 +45,9 @@ public class randomitem implements CommandExecutor {
             voteScaffold.setItemMeta(meta);
             Objects.requireNonNull(player).getInventory().addItem(voteScaffold);
             Objects.requireNonNull(player).getInventory().addItem(voteItem);
-            player.sendMessage(ChatColor.YELLOW + pluginAfnw + "アイテムの配布に成功しました。");
+            player.sendMessage(ChatColor.AQUA + pluginAfnw + "アイテムの配布に成功しました。");
+            player.sendTitle(ChatColor.YELLOW + "投票ありがとうございます!", null, 3, 60, 1);
+            Bukkit.broadcastMessage(ChatColor.YELLOW + pluginAfnw + player.getName() + "が投票でアイテムを入手しました。");
             Bukkit.getServer().getLogger().info("[AfnwCore::アイテム配布] " + player.getName() + " >>> " + Objects.requireNonNull(voteItem.getItemMeta()).getDisplayName());
             sound(loc);
             particle(loc);
