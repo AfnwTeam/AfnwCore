@@ -73,6 +73,7 @@ public class hoten implements CommandExecutor {
             case DEBUG_STICK:
             case END_PORTAL_FRAME:
             case END_PORTAL:
+            case KNOWLEDGE_BOOK:
                 return false;
             default:
                 return true;
