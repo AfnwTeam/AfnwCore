@@ -47,7 +47,7 @@ public class hoten implements CommandExecutor {
             player.sendMessage(ChatColor.YELLOW + pluginAfnw + "補填に成功しました。ご迷惑おかけしました。");
             Bukkit.broadcastMessage(ChatColor.YELLOW + pluginAfnw + player.getName() + "が投票(補填)でアイテムを獲得しました。");
             sender.sendMessage(ChatColor.AQUA + pluginAfnw + player.getName() + "に対して補填を実行しました。お相手にご確認のメッセージを送ってください。");
-            Bukkit.getServer().getLogger().info("[AfnwCore::補填] " + sender.getName() + " - " + player.getName() + " >>> " + Objects.requireNonNull(voteItem.getItemMeta()).getDisplayName());
+            Bukkit.getServer().getLogger().info("[AfnwCore::補填] " + sender.getName() + " - " + player.getName() + " >>> " + voteItem.getType());
             sound(loc);
             particle(loc);
             if (loc.getWorld() != null) {
