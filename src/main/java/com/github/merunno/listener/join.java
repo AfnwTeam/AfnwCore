@@ -16,7 +16,7 @@ import java.util.Objects;
 public class join implements Listener {
 
     String pluginAfnw = "[AfnwCore] ";
-    String pluginVersion = "v3.3.3";
+    String pluginVersion = "v3.4.0";
     String pluginStar = ChatColor.YELLOW + "★" + ChatColor.WHITE;
 
     @EventHandler
@@ -32,6 +32,7 @@ public class join implements Listener {
         player.sendMessage(pluginStar + "現在のバージョン → " + ChatColor.YELLOW + pluginVersion);
         player.sendMessage(pluginStar + "更新情報 → " + ChatColor.YELLOW + "https://afnwcore.merunno.dev/");
         player.sendMessage(pluginStar + "アジ鯖Discord → " + ChatColor.YELLOW + "https://discord.gg/azisaba");
+        player.sendMessage(pluginStar + "Afnwルール：" + ChatColor.WHITE + "https://www.azisaba.net/server-intro/a-fall-new-world/#rule");
         join_sound(loc);
 
         if (emptySlot == -1) {
