@@ -26,3 +26,4 @@ public class trash implements CommandExecutor {
         sender.openInventory(inv);
     }
 }
+
