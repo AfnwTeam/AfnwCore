@@ -1,6 +1,7 @@
 package com.github.merunno.listener;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Tag;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -20,6 +21,9 @@ public class saplingBreakCanceller implements Listener {
             }
             breakEvent.setCancelled(true);
             player.sendMessage(ChatColor.RED + "[AfnwCore] " + "一度設置した苗木は破壊できません。破壊の申請はサーバー内にいる運営に連絡してください。");
+        } else if(Tag.SAPLINGS.isTagged(breakEvent.getBlock().getLocation().add(0, 1, 0).getBlock().getType())) {
+            breakEvent.setCancelled(true);
+            player.sendMessage(ChatColor.RED + "[AfnwCore] " + "一度設置した苗木が植えられている土は破壊できません。苗木が育ち切るのを待つか、苗木の破壊を運営に申請してください。");
         }
     }
 }
