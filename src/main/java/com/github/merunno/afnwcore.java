@@ -20,7 +20,6 @@ public final class afnwcore extends JavaPlugin {
         Objects.requireNonNull(getCommand("help")).setExecutor(new help());
         Objects.requireNonNull(getCommand("about")).setExecutor(new help());
         Objects.requireNonNull(getCommand("hoten")).setExecutor(new hoten());
-        Objects.requireNonNull(getCommand("notice")).setExecutor(new notice());
         Objects.requireNonNull(getCommand("sign")).setExecutor(new sign());
         getLogger().info("コマンドの読み込み.... Done.");
 
