@@ -14,7 +14,7 @@ public class saplingBreakCanceller implements Listener {
     @EventHandler
     public void onBreakSapling(BlockBreakEvent breakEvent) {
         Player player = breakEvent.getPlayer();
-        if (breakEvent.getBlock().getType().name().contains("SAPLING")) {
+        if (Tag.SAPLINGS.isTagged(breakEvent.getBlock().getType())) {
             if (player.hasPermission("afnw.op.commands")) {
                 player.sendMessage(ChatColor.YELLOW + prefix + "オペレーター権限で苗木を破壊しました。");
                 return;
