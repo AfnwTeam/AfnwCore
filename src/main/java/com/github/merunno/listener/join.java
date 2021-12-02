@@ -1,6 +1,5 @@
 package com.github.merunno.listener;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Sound;
@@ -9,14 +8,13 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.Inventory;
-import org.spigotmc.event.player.PlayerSpawnLocationEvent;
 
 import java.util.Objects;
 
 public class join implements Listener {
 
     String pluginAfnw = "[AfnwCore] ";
-    String pluginVersion = "v3.4.1";
+    String pluginVersion = "v3.4.2";
     String pluginStar = ChatColor.YELLOW + "★" + ChatColor.WHITE;
 
     @EventHandler
@@ -40,7 +38,7 @@ public class join implements Listener {
         }
 
         if (player.hasPermission("afnw.op.commands")) {
-            joinEvent.setJoinMessage(ChatColor.YELLOW + "[AfnwCore：Admin] " + player.getName() + "がAfnwにログインしました。");
+            joinEvent.setJoinMessage(ChatColor.GRAY + "[AfnwCore] 権限所有者(Admin) - " + player.getName() + "がAfnwにログインしました。");
             return;
         }
 

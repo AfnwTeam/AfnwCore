@@ -10,6 +10,6 @@ public class brew implements Listener {
 
     @EventHandler
     public void onBrew(BrewEvent brewEvent) {
-        Bukkit.getServer().broadcastMessage(ChatColor.YELLOW + "[AfnwCore] どこかの醸造台での醸造が完了したようだ....");
+        Bukkit.getServer().broadcastMessage(ChatColor.GRAY + "[AfnwCore] どこかの醸造台での醸造が完了したようだ....");
     }
 }
