@@ -27,7 +27,8 @@ public class hoten implements CommandExecutor {
             int emptySlot = player_inventory.firstEmpty();
             if (emptySlot == -1) {
                 player.sendMessage(ChatColor.RED + pluginAfnw + "運営による補填に失敗しました。");
-                player.sendMessage(ChatColor.RED + "インベントリがいっぱいで配布できませんでした。再度運営に連絡してください。");
+                player.sendMessage(ChatColor.RED + pluginAfnw + "インベントリがいっぱいで配布できませんでした。再度運営に連絡してください。");
+                sender.sendMessage(ChatColor.RED + pluginAfnw + "補填に失敗");
                 inventory_sound(loc);
                 return true;
             }
