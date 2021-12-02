@@ -20,10 +20,8 @@ commands:
     aliases:
       - menu
       - m
-  about:
+  book:
     description: 遊び方の本をスポーンさせます。
-    aliases:
-      - book
   randomitem:
     description: アイテムを指定したユーザーに配布します。(コンソールでのみ実行できます。また、プラグイン実行用です。)
     permission: afnw.op.commands
