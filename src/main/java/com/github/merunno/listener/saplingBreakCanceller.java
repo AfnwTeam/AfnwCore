@@ -1,6 +1,7 @@
 package com.github.merunno.listener;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.Tag;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -14,7 +15,7 @@ public class saplingBreakCanceller implements Listener {
     @EventHandler
     public void onBreakSapling(BlockBreakEvent breakEvent) {
         Player player = breakEvent.getPlayer();
-        if (Tag.SAPLINGS.isTagged(breakEvent.getBlock().getType())) {
+        if (Tag.SAPLINGS.isTagged(breakEvent.getBlock().getType()) && !(breakEvent.getBlock().getType() == Material.FLOWERING_AZALEA || breakEvent.getBlock().getType() == Material.FLOWERING_AZALEA_LEAVES)) {
             if (player.hasPermission("afnw.op.commands")) {
                 player.sendMessage(ChatColor.YELLOW + prefix + "オペレーター権限で苗木を破壊しました。");
                 return;
