@@ -71,7 +71,6 @@ public class randomitem implements CommandExecutor {
             case BARRIER:
             case LIGHT:
             case JIGSAW:
-            case END_PORTAL_FRAME:
             case END_PORTAL:
             case KNOWLEDGE_BOOK:
             case DEBUG_STICK: return false;
