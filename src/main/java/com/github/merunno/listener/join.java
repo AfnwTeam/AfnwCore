@@ -24,13 +24,15 @@ public class join implements Listener {
         Location loc = player.getLocation();
         int emptySlot = player_inventory.firstEmpty();
 
-        player.sendTitle(ChatColor.AQUA + "Afnw", "この世界にあるのは、 岩盤一つだけ。", 3, 60, 1);
         player.sendMessage(ChatColor.YELLOW + "Afnwにようこそ！");
         player.sendMessage(pluginStar + "アイテムの入手 → " + ChatColor.YELLOW + "/vote");
         player.sendMessage(pluginStar + "現在のバージョン → " + ChatColor.YELLOW + pluginVersion);
         player.sendMessage(pluginStar + "更新情報 → " + ChatColor.YELLOW + "https://afnwcore.merunno.dev/");
         player.sendMessage(pluginStar + "アジ鯖Discord → " + ChatColor.YELLOW + "https://discord.gg/azisaba");
         player.sendMessage(pluginStar + "Afnwルール → " + ChatColor.YELLOW + "https://www.azisaba.net/server-intro/a-fall-new-world/#rule");
+        if(!player.hasPermission("afnw.op.commands")) {
+            player.sendTitle(ChatColor.AQUA + "Afnw", "この世界にあるのは、 岩盤一つだけ。", 3, 60, 1);
+        }
         join_sound(loc);
 
         if (emptySlot == -1) {
