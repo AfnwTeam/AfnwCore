@@ -1,5 +1,6 @@
 package com.github.merunno.listener;
 
+import com.sun.tools.javac.Main;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Sound;
@@ -14,7 +15,7 @@ import java.util.Objects;
 public class join implements Listener {
 
     String pluginAfnw = "[AfnwCore] ";
-    String pluginVersion = "v3.5.0";
+    String pluginVersion = "v3.5.1";
     String pluginStar = ChatColor.YELLOW + "★" + ChatColor.WHITE;
 
     @EventHandler
@@ -27,7 +28,6 @@ public class join implements Listener {
         player.sendMessage(ChatColor.YELLOW + "Afnwにようこそ！");
         player.sendMessage(pluginStar + "アイテムの入手 → " + ChatColor.YELLOW + "/vote");
         player.sendMessage(pluginStar + "現在のバージョン → " + ChatColor.YELLOW + pluginVersion);
-        player.sendMessage(pluginStar + "更新情報 → " + ChatColor.YELLOW + "https://afnwcore.merunno.dev/");
         player.sendMessage(pluginStar + "アジ鯖Discord → " + ChatColor.YELLOW + "https://discord.gg/azisaba");
         player.sendMessage(pluginStar + "Afnwルール → " + ChatColor.YELLOW + "https://www.azisaba.net/server-intro/a-fall-new-world/#rule");
         if(!player.hasPermission("afnw.op.commands")) {
