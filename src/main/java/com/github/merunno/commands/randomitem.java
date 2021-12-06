@@ -1,5 +1,6 @@
 package com.github.merunno.commands;
 
+import com.github.merunno.afnwcore;
 import org.bukkit.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -7,6 +8,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.*;
 
@@ -26,8 +29,21 @@ public class randomitem implements CommandExecutor {
             Location loc = player.getLocation();
             int emptySlot = player_inventory.firstEmpty();
             if (emptySlot == -1) {
-                player.sendMessage(ChatColor.RED + pluginAfnw + "アイテムの配布に失敗しました。");
-                player.sendMessage(ChatColor.RED + "インベントリがいっぱいで配布できませんでした。次回以降は整理してから投票を行ってください。");
+                player.sendMessage(ChatColor.RED +  "==== 配布に失敗 ====");
+                player.sendMessage(ChatColor.RED + "インベントリが満ぱんのため、AfnwCoreは配布に失敗しました。このメッセージを公式Discord \"#投票補填｜afnw鯖\" に送信してください。");
+                player.sendMessage(ChatColor.GREEN + "◆ インベントリの整理に最適な方法： ◆");
+                player.sendMessage("/personal-chests(/pc)：個人チェスト(パーソナルチェスト)を使用");
+                player.sendMessage("/trash：ゴミ箱を使用");
+                player.sendMessage(ChatColor.GREEN + "◆ [運営用] プレイヤー情報： ◆");
+                player.sendMessage(ChatColor.RED + "インベントリを整理してもらってから配布してください。");
+                player.sendMessage(ChatColor.LIGHT_PURPLE + "MCID:" + ChatColor.WHITE  + player.getName());
+                player.sendMessage(ChatColor.LIGHT_PURPLE + "UUID:" + ChatColor.WHITE  + player.getUniqueId());
+                player.sendMessage(ChatColor.LIGHT_PURPLE + "今いるワールド:" + ChatColor.WHITE  + player.getWorld().getName());
+                player.sendMessage("補填：/hoten " + player.getName());
+                player.sendMessage("インベントリ操作：/oi " + player.getName());
+                player.sendMessage(ChatColor.RED +  "==================");
+                player.sendTitle(ChatColor.RED + "配布に失敗しました。", "投票ありがとうございます....インベントリ整理は必ず！", 3, 60, 1);
+                Bukkit.getLogger().warning(ChatColor.RED + "[AfnwCore::アイテム配布] " + player.getName() + "が投票を行い、アイテムを獲得しようとしましたが失敗しました。");
                 inventory_sound(loc);
                 return true;
             }
