@@ -16,7 +16,7 @@ public class saplingBreakCanceller implements Listener {
     @EventHandler
     public void onBreakSapling(BlockBreakEvent breakEvent) {
         Player player = breakEvent.getPlayer();
-        if (Tag.SAPLINGS.isTagged(breakEvent.getBlock().getType()) && !(breakEvent.getBlock().getType() == Material.FLOWERING_AZALEA || breakEvent.getBlock().getType() == Material.FLOWERING_AZALEA_LEAVES)) {
+        if (Tag.SAPLINGS.isTagged(breakEvent.getBlock().getType()) && !(breakEvent.getBlock().getType() == Material.FLOWERING_AZALEA || breakEvent.getBlock().getType() == Material.AZALEA)) {
             if (player.hasPermission("afnw.op.commands")) {
                 player.sendMessage(ChatColor.YELLOW + prefix + "オペレーター権限で苗木を破壊しました。");
                 return;
@@ -34,7 +34,7 @@ public class saplingBreakCanceller implements Listener {
      */
     @EventHandler
     public void onFlowing(BlockFromToEvent event){
-        if (Tag.SAPLINGS.isTagged(event.getToBlock().getType()) && !(event.getToBlock().getType() == Material.FLOWERING_AZALEA || event.getToBlock().getType() == Material.FLOWERING_AZALEA_LEAVES)) {
+        if (Tag.SAPLINGS.isTagged(event.getToBlock().getType()) && !(event.getToBlock().getType() == Material.FLOWERING_AZALEA || event.getToBlock().getType() == Material.AZALEA)) {
             event.setCancelled(true);
         }
     }
