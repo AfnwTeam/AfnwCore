@@ -11,8 +11,8 @@ public class sign implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
         if (command.getName().equalsIgnoreCase("sign")) {
-            if(args.length != 0) {
-                if(args[0].equalsIgnoreCase("60")) {
+            if (args.length != 0) {
+                if (args[0].equalsIgnoreCase("60")) {
                     Bukkit.broadcastMessage(ChatColor.AQUA + "[AlertSign] 終了1時間前です。");
                     Bukkit.getOnlinePlayers().forEach(player -> player.sendTitle(ChatColor.AQUA + "終了1時間前", null, 3, 60, 1));
                     return true;

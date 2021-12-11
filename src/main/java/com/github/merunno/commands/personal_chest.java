@@ -12,7 +12,7 @@ public class personal_chest implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
-        if(command.getName().equalsIgnoreCase("personal-chests")) {
+        if (command.getName().equalsIgnoreCase("personal-chests")) {
             Player player = (Player) sender;
             player.openInventory(player.getEnderChest());
             sender.sendMessage(ChatColor.LIGHT_PURPLE + pluginAfnw + "個人チェスト(エンダーチェスト)を開きました。");

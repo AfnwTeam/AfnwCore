@@ -1,6 +1,5 @@
 package com.github.merunno.listener;
 
-import com.sun.tools.javac.Main;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Sound;

@@ -16,14 +16,14 @@ public class CropsBreakCanceller implements Listener {
     public void onbreak(BlockBreakEvent event) {
         Player player = event.getPlayer();
         Block target = event.getBlock();
-        if (Tag.CROPS.isTagged(target.getLocation().add(0,1,0).getBlock().getType())){
+        if (Tag.CROPS.isTagged(target.getLocation().add(0, 1, 0).getBlock().getType())) {
             player.sendMessage(ChatColor.RED + "[AfnwCore] 農作物が植えられている耕地は破壊できません。");
             event.setCancelled(true);
             return;
         }
-        if(!(Tag.CROPS.isTagged(target.getType()))) return;
-        if (target.getBlockData() instanceof Ageable){
-            Ageable crop = (Ageable)target.getBlockData();
+        if (!(Tag.CROPS.isTagged(target.getType()))) return;
+        if (target.getBlockData() instanceof Ageable) {
+            Ageable crop = (Ageable) target.getBlockData();
             if (crop.getMaximumAge() == crop.getAge()) return;
         }
         player.sendMessage(ChatColor.RED + "[AfnwCore] 一度植えた成長しきっていない農作物は破壊できません。");
@@ -34,16 +34,15 @@ public class CropsBreakCanceller implements Listener {
      * 農作物に対して水流が流れ込むのを阻害する
      */
     @EventHandler
-    public void onFlowing(BlockFromToEvent event){
+    public void onFlowing(BlockFromToEvent event) {
         Block target = event.getToBlock();
-        if(!(Tag.CROPS.isTagged(target.getType()))) return;
-        if (target.getBlockData() instanceof Ageable){
-            Ageable crop = (Ageable)target.getBlockData();
+        if (!(Tag.CROPS.isTagged(target.getType()))) return;
+        if (target.getBlockData() instanceof Ageable) {
+            Ageable crop = (Ageable) target.getBlockData();
             if (crop.getMaximumAge() == crop.getAge()) return;
         }
         event.setCancelled(true);
     }
-
 
 
 }
