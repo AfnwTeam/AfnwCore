@@ -22,7 +22,7 @@ public class trash implements CommandExecutor {
     }
 
     public void display_gui(Player sender) {
-        Inventory inv = Bukkit.createInventory(null, 54, ChatColor.RED + "ゴミ箱 : アイテムの消滅に注意");
+        Inventory inv = Bukkit.createInventory(null, 63, ChatColor.RED + "ゴミ箱 : アイテムの消滅に注意");
         sender.openInventory(inv);
     }
 }
