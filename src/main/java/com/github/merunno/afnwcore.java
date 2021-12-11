@@ -19,7 +19,6 @@ public final class afnwcore extends JavaPlugin {
         Objects.requireNonNull(getCommand("personal-chests")).setExecutor(new personal_chest());
         Objects.requireNonNull(getCommand("help")).setExecutor(new help());
         Objects.requireNonNull(getCommand("book")).setExecutor(new help());
-        Objects.requireNonNull(getCommand("hoten")).setExecutor(new hoten());
         Objects.requireNonNull(getCommand("sign")).setExecutor(new sign());
         getLogger().info("コマンドの読み込み.... Done.");
 
@@ -27,7 +26,6 @@ public final class afnwcore extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new join(), this);
         getServer().getPluginManager().registerEvents(new join_first(), this);
         getServer().getPluginManager().registerEvents(new quit(), this);
-        getServer().getPluginManager().registerEvents(new InventoryClose(), this);
         getServer().getPluginManager().registerEvents(new saplingBreakCanceller(), this);
         getServer().getPluginManager().registerEvents(new CropsBreakCanceller(), this);
         getServer().getPluginManager().registerEvents(new brew(), this);
