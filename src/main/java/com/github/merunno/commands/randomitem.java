@@ -87,6 +87,7 @@ public class randomitem implements CommandExecutor {
             case END_PORTAL:
             case KNOWLEDGE_BOOK:
             case DEBUG_STICK:
+            case BUNDLE:
                 return false;
             default:
                 return true;
