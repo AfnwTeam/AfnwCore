@@ -88,6 +88,9 @@ public class randomitem implements CommandExecutor {
             case KNOWLEDGE_BOOK:
             case DEBUG_STICK:
             case BUNDLE:
+            case AIR:
+            case VOID_AIR:
+            case CAVE_AIR:
                 return false;
             default:
                 return true;

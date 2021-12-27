@@ -14,7 +14,7 @@ import java.util.Objects;
 public class join implements Listener {
 
     String pluginAfnw = "[AfnwCore] ";
-    String pluginVersion = "v3.6.1";
+    String pluginVersion = "v3.6.2";
     String pluginStar = ChatColor.YELLOW + "★" + ChatColor.WHITE;
 
     @EventHandler
