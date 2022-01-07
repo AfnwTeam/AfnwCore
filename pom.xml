@@ -6,7 +6,7 @@
 
     <groupId>com.github.merunno</groupId>
     <artifactId>AfnwCore</artifactId>
-    <version>3.6.2</version>
+    <version>3.6.3</version>
     <packaging>jar</packaging>
 
     <name>afnwcore</name>

@@ -1,5 +1,6 @@
 package com.github.merunno.listener;
 
+import com.github.merunno.afnwcore;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Sound;
@@ -8,13 +9,15 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.Inventory;
+import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.Objects;
 
 public class join implements Listener {
 
     String pluginAfnw = "[AfnwCore] ";
-    String pluginVersion = "v3.6.2";
+    String pluginVersion = "v3.6.3(最終バージョン)";
     String pluginStar = ChatColor.YELLOW + "★" + ChatColor.WHITE;
 
     @EventHandler
@@ -41,6 +44,12 @@ public class join implements Listener {
             return;
         }
 
+        new BukkitRunnable() {
+            @Override
+            public void run() {
+                player.sendMessage(ChatColor.YELLOW + "【Afnw運営チームからのお知らせ】\n新Afnwサーバーへの開発・制作に尽力するため、1/8からAfnwの各種サポートを終了しています。違反行為への対応などは引き続き行いますが、新規コンテンツの追加や投票補填、Bedrock PvEのサポートは行いません。ご注意ください。");
+            }
+        }.runTaskLater(JavaPlugin.getPlugin(afnwcore.class), 20 * 6);
         joinEvent.setJoinMessage(ChatColor.GRAY + pluginAfnw + player.getName() + "がAfnwにログインしました。");
 
     }
